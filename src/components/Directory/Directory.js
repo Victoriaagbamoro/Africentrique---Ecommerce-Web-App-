@@ -9,35 +9,41 @@ export default class Directory extends React.Component{
         this.state = {
             sections: [
                 {
-                    title: "ANKARA STYLES",
+                    title: "ANKI STYLES",
                     imageUrl: "https://i.ibb.co/dKQYBbP/anakara.jpg",
-                    id: 1
+                    id: 1,
+                    linkUrl: 'ankara'
+
                 },
 
                 {
                     title: "VINTAGE",
                     imageUrl: "https://i.ibb.co/Gtk88R3/Vintage.jpg",
-                    id: 2
+                    id: 2,
+                    linkUrl: ''
                 },
 
                 {
-                    title: "WRAP GOWNS",
+                    title: "GOWNS",
                     imageUrl: "https://i.ibb.co/wCRHKyT/Wrapd.png",
-                    id: 3
+                    id: 3,
+                    linkUrl: ''
                 },
 
                 {
                     title: "TYE DYE",
                     imageUrl: "https://i.ibb.co/q0Zx3H7/anki.gif" ,
                     size: 'large',
-                    id: 4
+                    id: 4,
+                    linkUrl: ''
                 },
 
                 {
-                    title: "ANKARA TOPS",
+                    title: "TOPS",
                     imageUrl:"https://i.ibb.co/jDyYxb9/Topsng.png",
                     size: 'large',
-                    id: 5
+                    id: 5,
+                    linkUrl: ''
                 },
             ]
         }
@@ -46,8 +52,8 @@ export default class Directory extends React.Component{
         return(
             <div className="directory-menu">
                 {
-                    this.state.sections.map(({title, imageUrl, id, size}) => (
-                        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
+                    this.state.sections.map(({id, ...otherSectionProps}) => (
+                        <MenuItem key={id} {...otherSectionProps}/>
                     ))
                 }
 
